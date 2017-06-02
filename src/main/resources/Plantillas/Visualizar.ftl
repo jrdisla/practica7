@@ -44,8 +44,8 @@
                 <label>Telefono: </label>
                 <input disabled name="telefonomod" type="text" class="form-control" value="${estudiante.getTelefono()}" style="width: 200px; margin: auto; display: block"/>
             </div>
-            <button type="submit" onclick="document.location.href='/Modificar/${estudiante.getMatricula()?string["0"]}'">Modificar</button>
-            <button type="submit" onclick="document.location='/eliminar/${estudiante.getMatricula()?string["0"]}'">Eliminar</button>
+            <a class="btn btn-default"  href="/Modificar/${estudiante.getMatricula()?string["0"]}">Modificar</a>
+            <a class="btn btn-default"  href="/eliminar/${estudiante.getMatricula()?string["0"]}">Eliminar</a>
         </form>
 
     </div>
