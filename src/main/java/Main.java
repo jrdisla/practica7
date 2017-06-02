@@ -70,15 +70,13 @@ public class Main {
         }, freeMarkerEngine);
 
 
-        get("/Modificar/:mat", (request, response) -> {
+        get("/Modificar/:mat1", (request, response) -> {
 
-
-            System.out.println(Integer.parseInt(request.queryParams("mat")));
-            Estudiante student = lista.get(buscar(Integer.parseInt(request.queryParams("mat"))));
+            Estudiante student1 = lista.get(buscar(Integer.parseInt(request.params("mat1"))));
 
             Map<String, Object> attributes = new HashMap<>();
 
-            attributes.put("estudiante", student);
+            attributes.put("estudiante", student1);
             return new ModelAndView(attributes, "Modificar.ftl");
         }, freeMarkerEngine);
 
@@ -114,6 +112,10 @@ public class Main {
 
             return new ModelAndView(attributes, "Estudiante.ftl");
         }, freeMarkerEngine);
+
+
+
+
 
         post("/modificando", (request, response) -> {
 
