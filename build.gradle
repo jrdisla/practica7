@@ -24,6 +24,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.2'
     compile "com.heroku.sdk:heroku-jdbc:0.1.1"
 
+    runtime 'org.slf4j:slf4j-simple:1.7.21'
 
 
 
