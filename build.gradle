@@ -2,6 +2,12 @@ group 'pucmm.edu.do'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
+
+archivesBaseName = "Practica2"
+version = '1.0'
+applicationName = "Practica2"
+mainClassName = "App"
 
 sourceCompatibility = 1.8
 
@@ -16,4 +22,13 @@ dependencies {
     compile 'org.freemarker:freemarker:2.3.23'
     compile 'com.sparkjava:spark-debug-tools:0.5'
     compile 'com.google.code.gson:gson:2.6.2'
+    compile "com.heroku.sdk:heroku-jdbc:0.1.1"
+
+
+
+
 }
+
+defaultTasks = ['clean']
+task stage(dependsOn: ['clean', 'installApp'])
+

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.get;
+import static spark.Spark.port;
 import static spark.Spark.post;
 
 /**
@@ -18,6 +19,9 @@ public class Main {
     static List<Estudiante> lista = new ArrayList<Estudiante>();
 
     public static void main(String[] args) {
+
+        port(getHerokuAssignedPort());
+
         Configuration configuration=new Configuration();
         configuration.setClassForTemplateLoading(Main.class, "/Plantillas");
         FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine(configuration);
@@ -146,7 +150,13 @@ public class Main {
     }
 
 
-
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
 
     static int buscar (int mat)
     {
