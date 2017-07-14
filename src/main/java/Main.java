@@ -26,9 +26,7 @@ public class Main {
         Spark.staticFileLocation("/public");
 
 
-        /*get("/", (request, response) -> {
-            return "Hola Mundo Heroku";
-       });*/
+
         new ManejadorPlantilla().startApp();
 
     }
