@@ -5,61 +5,48 @@ import java.util.List;
  */
 public class Estudiante {
 
-    private String nombre;
     private int matricula;
-    private String apellido;
-    private String telefono;
+    private String name;
+    private String lastname;
+    private String tel;
 
-    private List<Estudiante> estudiantes;
-
-    public Estudiante(int matricula, String nombre , String apellido, String telefono) {
-        this.nombre = nombre;
+    public Estudiante(int matricula, String name, String lastname, String tel) {
         this.matricula = matricula;
-        this.apellido = apellido;
-        this.telefono = telefono;
-    }
-
-    public Estudiante() {
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getMatricula() {
-        return matricula;
+        this.name = name;
+        this.lastname = lastname;
+        this.tel = tel;
     }
 
     public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
 
-    public String getApellido() {
-        return apellido;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public int getMatricula() {
+
+        return matricula;
     }
 
-
-    public List<Estudiante> getEstudiantes() {
-        return estudiantes;
+    public String getName() {
+        return name;
     }
 
-    public void setEstudiantes(List<Estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getTel() {
+        return tel;
     }
 }
